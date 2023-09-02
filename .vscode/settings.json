@@ -1,6 +1,0 @@
-{
-    "rust-analyzer.linkedProjects": [
-        ".\\compile_time_map\\gen_struct\\Cargo.toml",
-        ".\\compile_time_map\\Cargo.toml"
-    ]
-}
