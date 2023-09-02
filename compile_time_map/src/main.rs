@@ -1,5 +1,6 @@
-// Assume this is where your primary codes liv
-// use clap::Parser;
+// Assume this file is where your primary code lives.
+
+use clap::Parser;
 use gen_struct::gen_struct;
 
 gen_struct!(
