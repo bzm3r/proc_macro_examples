@@ -1,8 +1,9 @@
+use prettyplease;
 use quote::quote;
 use std::collections::HashMap;
 use syn::{
-    parse_macro_input, parse_quote, token::Pound, Attribute, Expr, Fields, ItemStruct, MetaList,
-    Token,
+    parse_file, parse_macro_input, parse_quote, token::Pound, Attribute, Expr, Fields, ItemStruct,
+    MetaList,
 };
 
 // Function like proc_macros must have signature (TokenStream) -> TokenStream.
@@ -50,7 +51,8 @@ pub fn gen_struct(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
         #final_struct
     };
 
-    eprintln!("output tokens:\n{:#?}", tokens.to_string());
+    let file = parse_file(&tokens.to_string()).unwrap();
+    println!("{}", prettyplease::unparse(&file));
     tokens.into()
 }
 

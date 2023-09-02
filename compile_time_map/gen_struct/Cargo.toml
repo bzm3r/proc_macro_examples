@@ -9,6 +9,7 @@ publish = false
 proc-macro = true
 
 [dependencies]
+prettyplease = "0.2.12"
 proc-macro2 = { version = "1" }
 quote = "1"
 # We need the "full" feature because: https://docs.rs/syn/latest/syn/struct.ItemStruct.html
